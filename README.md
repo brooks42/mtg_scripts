@@ -27,3 +27,5 @@ Get the XML file by installing https://github.com/Cockatrice/, and copying it ov
 ### Script descriptions
 
 -   `all_cards_complier_script.py`: Generates a cube file with every card ever printed, minus subsets that don't _really_ make sense in draft, such as plane cards.
+
+-   `dist_pool_of_90_from_all_cards_script`: Generates a cube file of 90 cards from every card ever printed, same as above, but with a 6-pack random distribution (60 commons, 18 uncommons, 6 rares/mythics, 6 of any rarity (holos)).
