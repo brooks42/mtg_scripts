@@ -12,9 +12,7 @@ from bs4 import BeautifulSoup
 
 def main():
     """ 
-    compiles the set of cards in ../cards.xml into a cube format
-
-    cube format is just a file with the card names, with repeated card names for commons
+    compiles the set of cards in ../cards.xml into a singleton cube format file that can be imported into dr4ft.
 
     so for example
 
@@ -49,6 +47,7 @@ def main():
 
                         exclude = False
 
+                        # these cards aren't supported in dr4ft (and aren't good/fun enough to work around)
                         if card_name in ["1996 World Champion", "Hazmat Suit (Used)"]:
                             exclude = True
 
@@ -90,13 +89,14 @@ def main():
                         for rarity_tag in cockatrice_card:
                             if rarity_tag.name == 'set':
 
+                                # prune tokens
                                 if rarity_tag['rarity'] == 'token':
                                     continue
 
                                 cube_list.add(card_name)
 
         print(f'Writing {len(cube_list)} cards to cube file...')
-        with open('pkto_cube.txt', 'w') as f:
+        with open('example_cube.txt', 'w') as f:
             f.write('\n'.join(str(item) for item in cube_list))
 
         print('Done')
