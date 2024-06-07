@@ -5,10 +5,82 @@
 # `pip3 install beautifulsoup4`
 # `pip3 install lxml`
 
+
+# example card
+
+
+#             <name>Opt</name>
+#             <text>Scry 1.
+# Draw a card.</text>
+#             <prop>
+#                 <format-oathbreaker>legal</format-oathbreaker>
+#                 <format-modern>legal</format-modern>
+#                 <format-pauper>legal</format-pauper>
+#                 <maintype>Instant</maintype>
+#                 <coloridentity>U</coloridentity>
+#                 <format-explorer>legal</format-explorer>
+#                 <format-vintage>legal</format-vintage>
+#                 <format-pioneer>legal</format-pioneer>
+#                 <format-gladiator>legal</format-gladiator>
+#                 <format-brawl>legal</format-brawl>
+#                 <cmc>1</cmc>
+#                 <manacost>U</manacost>
+#                 <type>Instant</type>
+#                 <format-legacy>legal</format-legacy>
+#                 <format-duel>legal</format-duel>
+#                 <format-historic>legal</format-historic>
+#                 <format-paupercommander>legal</format-paupercommander>
+#                 <format-timeless>legal</format-timeless>
+#                 <layout>normal</layout>
+#                 <format-premodern>legal</format-premodern>
+#                 <format-commander>legal</format-commander>
+#                 <format-predh>legal</format-predh>
+#                 <side>front</side>
+#                 <colors>U</colors>
+#             </prop>
+
 import sys
 import random
 
 from bs4 import BeautifulSoup
+from collections import Counter
+
+class Card:
+    def __init__(self, name, text, maintype, type, manacost, cmc, coloridentity, rarity):
+        self.name = name
+        self.text = text
+        self.maintype = maintype
+        self.type = type
+        self.manacost = manacost
+        self.cmc = cmc
+        self.coloridentity = coloridentity
+        self.rarity = rarity
+
+    # compile card from a card_node
+    def __init__(self, card_node):
+        for node in card_node:
+            if node.name == 'name':
+                self.name = node.string
+
+            if node.name == 'text':
+                self.text = node.string
+
+            if node.name == 'prop':
+                for prop in node:
+                    if prop.name == 'maintype':
+                        self.maintype = prop.string
+                    if prop.name == 'type':
+                        self.type = prop.string
+                    if prop.name == 'manacost':
+                        self.manacost = prop.string
+                    if prop.name == 'cmc':
+                        self.manacost = prop.string
+                    if prop.name == 'coloridentity':
+                        self.coloridentity = prop.string
+            
+            if node.name == 'set':
+                self.rarity = node['rarity']
+    
 
 def main():
     """ 
@@ -62,55 +134,48 @@ def allLegalCards(filename):
 
             # grab the info and transform this into the Card instance format above
             cockatrice_card = all_cards[index]
+            card = Card(cockatrice_card)
 
-            for name_tag in cockatrice_card:
-                if name_tag.name == 'name':
-                    card_name = name_tag.string
+            exclude = False
 
-                    exclude = False
+            # exclude some cards that don't work, as well as basic lands
+            if card.name in ["1996 World Champion", "Hazmat Suit (Used)"]:
+                exclude = True
 
-                    if card_name in ["1996 World Champion", "Hazmat Suit (Used)"]:
-                        exclude = True
+            if 'Scheme' in card.maintype:
+                exclude = True
+            if 'Phenomenon' in card.maintype:
+                exclude = True
+            if 'Vanguard' in card.maintype:
+                exclude = True
+            if 'Hero' in card.maintype:
+                exclude = True
+            if 'Plane' in card.maintype:
+                exclude = True
 
-                    for tag in cockatrice_card:
-                        if tag.name == 'prop':
-                            for type_tag in tag:
-                                if type_tag.name == 'maintype':
-                                    if 'Scheme' in type_tag.string:
-                                        exclude = True
-                                    if 'Phenomenon' in type_tag.string:
-                                        exclude = True
-                                    if 'Vanguard' in type_tag.string:
-                                        exclude = True
-                                    if 'Hero' in type_tag.string:
-                                        exclude = True
-                                    if 'Plane' in type_tag.string:
-                                        exclude = True
+            if 'Basic Land' in card.type:
+                exclude = True
 
-                                if type_tag.name == 'type':
-                                    if 'Basic Land' in type_tag.string:
-                                        exclude = True
+            if exclude:
+                continue
 
-                    if exclude:
+            # only append non-token rarities, and append twice if rarity is common
+            for rarity_tag in cockatrice_card:
+                if rarity_tag.name == 'set':
+
+                    if rarity_tag['rarity'] == 'token':
                         continue
 
-                    # only append non-token rarities, and append twice if rarity is common
-                    for rarity_tag in cockatrice_card:
-                        if rarity_tag.name == 'set':
-
-                            if rarity_tag['rarity'] == 'token':
-                                continue
-
-                            if passesFilter(cockatrice_card):
-                                all_available_cards.append(card_name)
-                                if rarity_tag['rarity'] == 'common':
-                                    all_commons.append(card_name)
-                                if rarity_tag['rarity'] == 'uncommon':
-                                    all_uncommons.append(card_name)
-                                if rarity_tag['rarity'] == 'rare':
-                                    all_rares.append(card_name)
-                                if rarity_tag['rarity'] == 'mythic':
-                                    all_mythics.append(card_name)
+                    if passesFilter(cockatrice_card):
+                        all_available_cards.append(card)
+                        if rarity_tag['rarity'] == 'common':
+                            all_commons.append(card)
+                        if rarity_tag['rarity'] == 'uncommon':
+                            all_uncommons.append(card)
+                        if rarity_tag['rarity'] == 'rare':
+                            all_rares.append(card)
+                        if rarity_tag['rarity'] == 'mythic':
+                            all_mythics.append(card)
 
     print(
         f'Lists calculated {len(all_commons)} {len(all_uncommons)} {len(all_rares)} {len(all_mythics)}')
@@ -120,7 +185,53 @@ def allLegalCards(filename):
 # here's where a custom filter goes if we want one
 def passesFilter(card):
 
-    return True
+    for text_tag in card:
+        if text_tag.name == 'text':
+            if text_tag.string != None:
+
+                word_count = len(text_tag.string.split())
+
+                if word_count == 5:
+                    print(f'checking {text_tag.string}: {word_count}')
+                    return True
+
+    return False
+
+def displayStatsForCube(all_cards):
+    print("Stats")
+    print(f'Total cards: {all_cards}')
+
+def colorDistributionAmongCards(all_cards):
+
+    white = list()
+    blue = list()
+    black = list()
+    red = list()
+    green = list()
+
+    for card in all_cards:
+        for props_tag in card:
+            if props_tag.name == 'prop':
+                for color_identity_tag in card:
+                    if color_identity_tag.name == 'coloridentity':
+                        color_identity = color_identity_tag.string
+
+                        if color_identity != None:
+                            if 'w' in color_identity:
+                                white.append(card)
+                            if 'u' in color_identity:
+                                blue.append(card)
+                            if 'b' in color_identity:
+                                black.append(card)
+                            if 'r' in color_identity:
+                                red.append(card)
+                            if 'g' in color_identity:
+                                green.append(card)
+
+    return white, blue, black, red, green
+
+def printManaValuesOfCards(cards):
+    print('1\t2\t3\t4\t5\t6\t7+')
 
 def generateCubeFile(all_cards, all_commons, all_uncommons, all_rares, all_mythics):
 
@@ -152,7 +263,7 @@ def generateCubeFile(all_cards, all_commons, all_uncommons, all_rares, all_mythi
 def dumpCubeFile(cube_list):
     print(f'Writing {len(cube_list)} cards to cube file...')
     with open('weird_cube.txt', 'w') as f:
-        f.write('\n'.join(str(item) for item in cube_list))
+        f.write('\n'.join(str(item.name) for item in cube_list))
 
 if __name__ == "__main__":
     main()
