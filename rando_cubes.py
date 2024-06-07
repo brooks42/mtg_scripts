@@ -46,7 +46,7 @@ from bs4 import BeautifulSoup
 from collections import Counter
 
 class Card:
-    def __init__(self, name, text, maintype, type, manacost, cmc, coloridentity, rarity):
+    def __init__(self, name, text, maintype, type, manacost, cmc, coloridentity, rarity, side):
         self.name = name
         self.text = text
         self.maintype = maintype
@@ -55,6 +55,7 @@ class Card:
         self.cmc = cmc
         self.coloridentity = coloridentity
         self.rarity = rarity
+        self.side = side
 
     # compile card from a card_node
     def __init__(self, card_node):
@@ -77,6 +78,8 @@ class Card:
                         self.manacost = prop.string
                     if prop.name == 'coloridentity':
                         self.coloridentity = prop.string
+                    if prop.name == 'side':
+                        self.side = prop.string
             
             if node.name == 'set':
                 self.rarity = node['rarity']
@@ -103,11 +106,9 @@ def main():
         # open the input file as XML, input is assumed to be a cockatrice card file
         print("Loading file...")
 
-        all_cards, all_commons, all_uncommons, all_rares, all_mythics = allLegalCards(filename)
+        all_cards = allLegalCards(filename)
 
-        cube_list = generateCubeFile(all_cards, all_commons, all_uncommons, all_rares, all_mythics)
-
-        dumpCubeFile(cube_list)
+        dumpCubeFile(all_cards)
 
         print('Done')
 
@@ -160,47 +161,210 @@ def allLegalCards(filename):
                 continue
 
             # only append non-token rarities, and append twice if rarity is common
-            for rarity_tag in cockatrice_card:
-                if rarity_tag.name == 'set':
+            if  card.rarity == 'token':
+                continue
 
-                    if rarity_tag['rarity'] == 'token':
-                        continue
-
-                    if passesFilter(cockatrice_card):
-                        all_available_cards.append(card)
-                        if rarity_tag['rarity'] == 'common':
-                            all_commons.append(card)
-                        if rarity_tag['rarity'] == 'uncommon':
-                            all_uncommons.append(card)
-                        if rarity_tag['rarity'] == 'rare':
-                            all_rares.append(card)
-                        if rarity_tag['rarity'] == 'mythic':
-                            all_mythics.append(card)
+            if passesFilter(card):
+                all_available_cards.append(card)
+                if card.rarity == 'common':
+                    all_commons.append(card)
+                if card.rarity == 'uncommon':
+                    all_uncommons.append(card)
+                if card.rarity == 'rare':
+                    all_rares.append(card)
+                if card.rarity == 'mythic':
+                    all_mythics.append(card)
 
     print(
         f'Lists calculated {len(all_commons)} {len(all_uncommons)} {len(all_rares)} {len(all_mythics)}')
     
-    return all_available_cards, all_commons, all_uncommons, all_rares, all_mythics
+    displayStatsForCube(all_available_cards)
+
+    print("Filling out cube...")
+
+    all_cards = fillOutCardsToCount(all_available_cards)
+
+    displayStatsForCube(all_cards)
+    
+    return all_cards
 
 # here's where a custom filter goes if we want one
 def passesFilter(card):
 
-    for text_tag in card:
-        if text_tag.name == 'text':
-            if text_tag.string != None:
+    if card.text != None:
+        word_count = len(card.text.split())
 
-                word_count = len(text_tag.string.split())
-
-                if word_count == 5:
-                    print(f'checking {text_tag.string}: {word_count}')
-                    return True
+        if hasattr(card, 'side'):
+            if word_count == 5 and card.side == 'front':
+                return True
+        else:
+            if word_count == 5:
+                return True
 
     return False
 
+def fillOutCardsToCount(all_cards):
+
+    modified_card_list = all_cards
+
+    white, blue, black, red, green, colorless, multicolor = colorDistributionAmongCards(all_cards)
+
+    # 360 is the size of a "normal" cube
+    cards_to_pad = 360 - len(colorless) - len(multicolor)
+
+    # if there's not a round number of cards to pad, add the first common colorless cards as dupes
+    # TODO: this will break if there aren't enough colorless commons :)
+    colorless_commons = cardsWithRarity(colorless, 'common')
+    i = 0
+    while cards_to_pad % 5 != 0:
+        all_cards.append(colorless_commons[i])
+        colorless.append(colorless_commons[i])
+        cards_to_pad = 360 - len(colorless) - len(multicolor)
+        i += 1
+
+    # now get the number of cards of each color that we need to add in
+    idealNumber = cards_to_pad / 5
+
+    print(f'Ideal card count for each color is {idealNumber}')
+
+    # pad out white cards
+    rarity_passes = ['common', 'common', 'uncommon', 'rare', 'mythic']
+    rarity_index = 0
+    common_index = 0
+    while len(white) < idealNumber:
+        print('appending white card')
+        current_rarity = rarity_passes[rarity_index]
+        padding_cards = cardsWithRarity(white, current_rarity)
+
+        if current_rarity == 'common':
+            white.append(padding_cards[common_index])
+            common_index += 1
+        else:
+            if len(padding_cards) > 0:
+                white.append(padding_cards[0])
+        
+        rarity_index += 1
+        if rarity_index > 4:
+            rarity_index = 0
+
+    # pad for blue cards
+    rarity_index = 0
+    common_index = 0
+    while len(blue) < idealNumber:
+        print('appending blue card')
+        current_rarity = rarity_passes[rarity_index]
+        padding_cards = cardsWithRarity(blue, current_rarity)
+
+        if current_rarity == 'common':
+            blue.append(padding_cards[common_index])
+            common_index += 1
+        else:
+            if len(padding_cards) > 0:
+                blue.append(padding_cards[0])
+        
+        rarity_index += 1
+        if rarity_index > 4:
+            rarity_index = 0
+
+    # pad for black cards
+    rarity_index = 0
+    common_index = 0
+    while len(black) < idealNumber:
+        print('appending black card')
+        current_rarity = rarity_passes[rarity_index]
+        padding_cards = cardsWithRarity(black, current_rarity)
+
+        if current_rarity == 'common':
+            black.append(padding_cards[common_index])
+            common_index += 1
+        else:
+            if len(padding_cards) > 0:
+                black.append(padding_cards[0])
+        
+        rarity_index += 1
+        if rarity_index > 4:
+            rarity_index = 0
+    
+    # pad for red cards
+    rarity_index = 0
+    common_index = 0
+    while len(red) < idealNumber:
+        print('appending red card')
+        current_rarity = rarity_passes[rarity_index]
+        padding_cards = cardsWithRarity(red, current_rarity)
+
+        if current_rarity == 'common':
+            red.append(padding_cards[common_index])
+            common_index += 1
+        else:
+            if len(padding_cards) > 0:
+                red.append(padding_cards[0])
+        
+        rarity_index += 1
+        if rarity_index > 4:
+            rarity_index = 0
+
+    # pad for green cards
+    rarity_index = 0
+    common_index = 0
+    while len(green) < idealNumber:
+        print('appending green card')
+        current_rarity = rarity_passes[rarity_index]
+        padding_cards = cardsWithRarity(green, current_rarity)
+
+        if current_rarity == 'common':
+            green.append(padding_cards[common_index])
+            common_index += 1
+        else:
+            if len(padding_cards) > 0:
+                green.append(padding_cards[0])
+        
+        rarity_index += 1
+        if rarity_index > 4:
+            rarity_index = 0
+
+    modified_card_list = white + blue + black + red + green + colorless + multicolor
+
+    return modified_card_list
+        
+
+# prints the stats of the cube
 def displayStatsForCube(all_cards):
     print("Stats")
-    print(f'Total cards: {all_cards}')
+    print(f'Total cards: {len(all_cards)}')
+    
+    white, blue, black, red, green, colorless, multicolor = colorDistributionAmongCards(all_cards)
+    print(f'{len(white)} White')
+    print(f'{len(blue)} Blue')
+    print(f'{len(black)} Black')
+    print(f'{len(red)} Red')
+    print(f'{len(green)} Green')
+    print(f'{len(colorless)} Colorless')
+    print(f'{len(multicolor)} Multicolor')
 
+    print(f"White rarities: {rarityCount(white, 'common')}/{rarityCount(white, 'uncommon')}/{rarityCount(white, 'rare')}/{rarityCount(white, 'mythic')}")
+    print(f"Blue rarities: {rarityCount(blue, 'common')}/{rarityCount(blue, 'uncommon')}/{rarityCount(blue, 'rare')}/{rarityCount(blue, 'mythic')}")
+    print(f"Black rarities: {rarityCount(black, 'common')}/{rarityCount(black, 'uncommon')}/{rarityCount(black, 'rare')}/{rarityCount(black, 'mythic')}")
+    print(f"Red rarities: {rarityCount(red, 'common')}/{rarityCount(red, 'uncommon')}/{rarityCount(red, 'rare')}/{rarityCount(red, 'mythic')}")
+    print(f"Green rarities: {rarityCount(green, 'common')}/{rarityCount(green, 'uncommon')}/{rarityCount(green, 'rare')}/{rarityCount(green, 'mythic')}")
+    print(f"Colorless rarities: {rarityCount(colorless, 'common')}/{rarityCount(colorless, 'uncommon')}/{rarityCount(colorless, 'rare')}/{rarityCount(colorless, 'mythic')}")
+    print(f"Multicolor rarities: {rarityCount(multicolor, 'common')}/{rarityCount(multicolor, 'uncommon')}/{rarityCount(multicolor, 'rare')}/{rarityCount(multicolor, 'mythic')}")
+    
+def cardsWithRarity(cards, rarity):
+    check = list()
+
+    for card in cards:
+        if card.rarity == rarity:
+            check.append(card)
+
+    return check
+
+# returns the number of cards in the passed list with the given rarity
+def rarityCount(cards, rarity):
+    return len(cardsWithRarity(cards, rarity))
+
+
+# gets the color distribution across all the passed cards
 def colorDistributionAmongCards(all_cards):
 
     white = list()
@@ -208,56 +372,33 @@ def colorDistributionAmongCards(all_cards):
     black = list()
     red = list()
     green = list()
+    colorless = list()
+    multicolor = list()
 
     for card in all_cards:
-        for props_tag in card:
-            if props_tag.name == 'prop':
-                for color_identity_tag in card:
-                    if color_identity_tag.name == 'coloridentity':
-                        color_identity = color_identity_tag.string
+        if hasattr(card, 'coloridentity'):
+            if card.coloridentity == None:
+                colorless.append(card)
+            else:
+                if card.coloridentity == 'W':
+                    white.append(card)
+                elif card.coloridentity == 'U':
+                    blue.append(card)
+                elif card.coloridentity == 'B':
+                    black.append(card)
+                elif card.coloridentity == 'R':
+                    red.append(card)
+                elif card.coloridentity == 'G':
+                    green.append(card)
+                else:
+                    multicolor.append(card)
+        else:
+            colorless.append(card)
 
-                        if color_identity != None:
-                            if 'w' in color_identity:
-                                white.append(card)
-                            if 'u' in color_identity:
-                                blue.append(card)
-                            if 'b' in color_identity:
-                                black.append(card)
-                            if 'r' in color_identity:
-                                red.append(card)
-                            if 'g' in color_identity:
-                                green.append(card)
-
-    return white, blue, black, red, green
+    return white, blue, black, red, green, colorless, multicolor
 
 def printManaValuesOfCards(cards):
     print('1\t2\t3\t4\t5\t6\t7+')
-
-def generateCubeFile(all_cards, all_commons, all_uncommons, all_rares, all_mythics):
-
-    cube_list = list()
-
-    # generate cube list of all the proper cards
-    # 60 commons
-    for i in range(0, 60):
-        cube_list.append(random.choice(all_commons))
-    # 18 uncommons
-    for i in range(0, 18):
-        cube_list.append(random.choice(all_uncommons))
-    # For rare/mythic logic, we could just lump them in the same bucket and pick 6, giving about 19.4% chance of getting a mythic.
-    # Actual MTG distribution is 13.5% chance, so we'll go with that
-    for i in range(0, 6):
-        items = range(1, 201)
-        check = random.choice(items)
-        if check <= 27:
-            cube_list.append(random.choice(all_mythics))
-        else:
-            cube_list.append(random.choice(all_rares))
-    # 6 holos (any rarity)
-    for i in range(0, 6):
-        cube_list.append(random.choice(all_cards))
-
-    return cube_list
 
 # writes the passed list of cards to a file
 def dumpCubeFile(cube_list):

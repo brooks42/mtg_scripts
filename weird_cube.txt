@@ -1,90 +1,360 @@
-Winged Sliver
-Glacial Wall
-Tyrant's Machine
-Skirk Prospector
-Mind Rot
-Metathran Soldier
-Mind Rot
-Skirk Prospector
-Demolish
-Waking Nightmare
+Loxodon Mystic
+Nebelgast Beguiler
+Glorious Anthem
+Altar's Light
+Fan Bearer
+Silver Knight
+Watcher Sliver
+Angelic Edict
+Purify
+Ironwright's Cleansing
+Plated Sliver
+Blinding Mage
+Soulmender
+Akroan Jailer
+Metallurgeon
+Akroan Mastiff
+Soothing Balm
+Benalish Trapper
+Starlight Invoker
 Disenchant
-Deconstruct
-Diabolic Edict
-Fyndhorn Brownie
-Metathran Soldier
-Demolish
-Mobilize
-Turn to Dust
-Plummet
-Plummet
-Bonesplitter Sliver
-Skirk Prospector
-Blood Pet
-Demolish
-Innocent Blood
-Cathodion
-Naturalize
-Disenchant
-Unnerve
-Slither Blade
-Mind Rot
-Naturalize
-Tome Scour
-Slither Blade
-Natural Spring
-Stream of Life
-Stream of Life
+Magus of the Moat
+Serra Aviary
+Marble Chalice
+Urgent Exorcism
+Revoke Existence
+Frostbridge Guard
+Moat
 Gavony Trapper
-Nature's Chant
-Demolish
-Vision Skeins
-Slither Blade
-Guardians of Meletis
-Wall of Heat
-Fyndhorn Brownie
-Young Wei Recruits
-Seismic Spike
-Wrecking Ball
-Catalyst Elemental
-Disenchant
+Iona's Judgment
+Scepter of Dominance
+Loxodon Mender
+Sunblade Angel
+Dogged Hunter
+Goldmeadow Harrier
+Master Decoy
+Blazing Archon
+Auriok Transfixer
+Silent Attendant
+Checkpoint Officer
+Blessed Light
+Fate Forgotten
+Gideon's Lawkeeper
+Sinew Sliver
+Loxodon Mystic
+Nebelgast Beguiler
+Altar's Light
+Glorious Anthem
+Fan Bearer
+Watcher Sliver
+Altar's Light
+Glorious Anthem
+Angelic Edict
+Ironwright's Cleansing
+Altar's Light
+Glorious Anthem
+Plated Sliver
+Blinding Mage
+Altar's Light
+Phantom Warrior
+Douse
+Scepter of Insight
+Phantom Ninja
+Opt
 Covert Operative
-Get the Point
-Reckless Barbarian
-Lava Flow
-Catalyst Elemental
-Disenchant
-Wall of Wood
-Memory Drain
-Simplify
-Blood Vassal
-Trip Wire
+Moat Piranhas
+Homarid Shaman
+Tome Scour
+Triton Shorestalker
+Mist-Cloaked Herald
 Levitation
-Voltaic Key
-Tigereye Cameo
-Mortify
-Barter in Blood
-Jayemdae Tome
-Composite Golem
-Narwhal
-Benalish Heralds
-Might Sliver
-Yavimaya Gnats
-Fugue
-Kiora's Follower
-Wall of Stone
-Wall of Stone
-Natural Spring
-Opportunity
-Infinity Elemental
-Savannah
-Tropical Island
-Stroke of Genius
-Savannah
-Plateau
-Mortify
-Bloodstone Cameo
-Disenchant
+Synchronous Sliver
+Gridlock
+Whimsy
+Slither Blade
 Serum Visions
-Bayou
+Vision Skeins
+Ertai, Wizard Adept
+Latch Seeker
+Prosperity
+Glacial Wall
+Winged Sliver
+Memory Drain
+Braingeyser
+Mind Sculpt
+Tidal Kraken
+Metathran Soldier
+Overflowing Insight
+Deluge
+Ancestral Recall
+Plasma Elemental
+Inspiration
+Vigilant Drake
+Talas Warrior
+Blizzard Elemental
+Stroke of Genius
+Opportunity
+Narwhal
+Ghost Ship
+Phantom Ninja
+Opt
+Phantom Warrior
+Scepter of Insight
+Overflowing Insight
+Covert Operative
+Moat Piranhas
+Phantom Warrior
+Scepter of Insight
+Overflowing Insight
+Tome Scour
+Triton Shorestalker
+Phantom Warrior
+Scepter of Insight
+Overflowing Insight
+Mist-Cloaked Herald
+Synchronous Sliver
+Phantom Warrior
+Defenestrate
+Finishing Blow
+Young Wei Recruits
+Unnerve
+Deathgrip
+Blood Vassal
+Deception
+Manor Skeleton
+Innocent Blood
+Three Tragedies
+Rathi Trapper
+Pride of the Perfect
+Screeching Harpy
+Nightshade Stinger
+Barter in Blood
+Fugue
+Hag of Noxious Nightmares
+Daring Demolition
+Mind Rot
+Daggerclaw Imp
+Diabolic Edict
+Delirium Skeins
+Waking Nightmare
+Feed the Serpent
+Bad Ass
+Fell the Profane
+Vampire Interloper
+Wit's End
+Royal Assassin
+Stronghold Taskmaster
 Cruel Edict
+Liturgy of Blood
+Blood Pet
+Urborg Shambler
+Hunted Ghoul
+Hero's Downfall
+Defenestrate
+Finishing Blow
+Deathgrip
+Hag of Noxious Nightmares
+Young Wei Recruits
+Unnerve
+Deathgrip
+Hag of Noxious Nightmares
+Blood Vassal
+Deception
+Deathgrip
+Hag of Noxious Nightmares
+Manor Skeleton
+Innocent Blood
+Deathgrip
+Hag of Noxious Nightmares
+Rathi Trapper
+Nightshade Stinger
+Deathgrip
+Hag of Noxious Nightmares
+Daring Demolition
+Mind Rot
+Blade Sliver
+Reckless Barbarian
+Blood Knight
+Wall of Granite
+Wall of Stone
+Yawning Fissure
+Cyclops of Eternal Fury
+Demolish
+Catalyst Elemental
+Tectonic Break
+Heart Sliver
+Misguided Rage
+Blistering Barrier
+Rubble Reading
+Devastation
+Wall of Earth
+Wall of Heat
+Infinity Elemental
+Sunder from Within
+Iron-Barb Hellion
+Yellow Scarves Troops
+Tremble
+Spinal Villain
+Battering Sliver
+Seismic Spike
+Avalanche
+Wall of Torches
+Flowstone Surge
+Bonesplitter Sliver
+Raging Kronch
+Clear a Path
+Goblin Glider
+Kyren Glider
+Craven Hulk
+Skirk Prospector
+Crack the Earth
+Lava Flow
+Giant Cindermaw
+Reckless Barbarian
+Yawning Fissure
+Blade Sliver
+Tectonic Break
+Infinity Elemental
+Demolish
+Catalyst Elemental
+Blade Sliver
+Tectonic Break
+Infinity Elemental
+Heart Sliver
+Misguided Rage
+Blade Sliver
+Tectonic Break
+Infinity Elemental
+Blistering Barrier
+Rubble Reading
+Blade Sliver
+Tectonic Break
+Infinity Elemental
+Stream of Life
+Sculptor of Winter
+Gaea's Anthem
+Wrap in Vigor
+Fyndhorn Brownie
+Gaea's Herald
+Wall of Ice
+Argothian Elder
+Tranquil Grove
+Wing Snare
+Naturalize
+Yavimaya Gnats
+Muscle Sliver
+Trolls of Tel-Jilad
+Fade into Antiquity
+Reflex Sliver
+Mobilize
+Natural Spring
+Lifeforce
+Vitalize
+Deconstruct
+Plummet
+Crosswinds
+Might Sliver
+Niall Silvain
+Wall of Wood
+Horned Sliver
+Spinneret Sliver
+Simplify
+Trip Wire
+Turn to Dust
+Desecration Plague
+Whirlwind
+Stream of Life
+Sculptor of Winter
+Gaea's Anthem
+Gaea's Herald
+Wrap in Vigor
+Fyndhorn Brownie
+Gaea's Anthem
+Gaea's Herald
+Naturalize
+Muscle Sliver
+Gaea's Anthem
+Gaea's Herald
+Fade into Antiquity
+Reflex Sliver
+Gaea's Anthem
+Gaea's Herald
+Mobilize
+Natural Spring
+Gaea's Anthem
+Gaea's Herald
+Vitalize
+Deconstruct
+Gaea's Anthem
+Gaea's Herald
+Plummet
+Aesthir Glider
+Orb of Dreams
+Tower of Fortunes
+Trip Noose
+Ashnod's Altar
+Mirror Gallery
+Krark-Clan Ironworks
+Thraben Gargoyle
+Braidwood Cup
+Myr Mindservant
+Steel Wall
+Tyrant's Machine
+Voltaic Construct
+Guardians of Meletis
+Memory Crystal
+Information Booth
+Su-Chi
+Steel Golem
+Eon Hub
+Jayemdae Tome
+Bonded Construct
+Voltaic Key
+Jandor's Saddlebags
+Arcane Encyclopedia
+Cathodion
+Jhoira's Toolbox
+Grid Monitor
+Aesthir Glider
+Suture Spirit
+Composite Golem
+Troll-Horn Cameo
+Unbender Tine
+Plateau
+Wrecking Ball
+Collective Blessing
+Tattered Drake
+Savannah
+Get the Point
+Bayou
+Elite Arrester
+Guttural Response
+Morgue Toad
+Badlands
+Drake-Skull Cameo
+Kiora's Follower
+Heroes' Reunion
+Dreadbore
+Jhessian Infiltrator
+Tropical Island
+Seashell Cameo
+Charging Troll
+Madrush Cyclops
+Volcanic Island
+Nature's Chant
+Ostiary Thrull
+Benalish Heralds
+Living Airship
+Taiga
+Fire Sprites
+Bloodstone Cameo
+Tundra
+Underground Sea
+Mortify
+Ramses Overdark
+Ragnar
+Tigereye Cameo
+Transguild Courier
+Scrubland
+Iridescent Angel
+Glimpse the Unthinkable
