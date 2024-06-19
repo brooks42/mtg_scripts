@@ -173,6 +173,7 @@ def allLegalCards(filename):
                 if card.rarity == 'rare':
                     all_rares.append(card)
                 if card.rarity == 'mythic':
+                    print(f'mythic found: {card.name}')
                     all_mythics.append(card)
 
     print(

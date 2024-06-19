@@ -1,360 +1,360 @@
-Loxodon Mystic
-Nebelgast Beguiler
-Glorious Anthem
-Altar's Light
-Fan Bearer
-Silver Knight
-Watcher Sliver
-Angelic Edict
-Purify
-Ironwright's Cleansing
-Plated Sliver
-Blinding Mage
-Soulmender
-Akroan Jailer
-Metallurgeon
-Akroan Mastiff
-Soothing Balm
-Benalish Trapper
-Starlight Invoker
-Disenchant
-Magus of the Moat
-Serra Aviary
-Marble Chalice
-Urgent Exorcism
-Revoke Existence
-Frostbridge Guard
-Moat
-Gavony Trapper
-Iona's Judgment
-Scepter of Dominance
-Loxodon Mender
-Sunblade Angel
-Dogged Hunter
-Goldmeadow Harrier
-Master Decoy
-Blazing Archon
-Auriok Transfixer
-Silent Attendant
-Checkpoint Officer
-Blessed Light
-Fate Forgotten
-Gideon's Lawkeeper
-Sinew Sliver
-Loxodon Mystic
-Nebelgast Beguiler
-Altar's Light
-Glorious Anthem
-Fan Bearer
-Watcher Sliver
-Altar's Light
-Glorious Anthem
-Angelic Edict
-Ironwright's Cleansing
-Altar's Light
-Glorious Anthem
-Plated Sliver
-Blinding Mage
-Altar's Light
-Phantom Warrior
-Douse
-Scepter of Insight
-Phantom Ninja
-Opt
-Covert Operative
-Moat Piranhas
-Homarid Shaman
-Tome Scour
-Triton Shorestalker
-Mist-Cloaked Herald
-Levitation
-Synchronous Sliver
-Gridlock
-Whimsy
-Slither Blade
-Serum Visions
-Vision Skeins
-Ertai, Wizard Adept
-Latch Seeker
-Prosperity
-Glacial Wall
-Winged Sliver
-Memory Drain
-Braingeyser
-Mind Sculpt
-Tidal Kraken
-Metathran Soldier
-Overflowing Insight
-Deluge
-Ancestral Recall
-Plasma Elemental
-Inspiration
-Vigilant Drake
-Talas Warrior
-Blizzard Elemental
-Stroke of Genius
-Opportunity
-Narwhal
-Ghost Ship
-Phantom Ninja
-Opt
-Phantom Warrior
-Scepter of Insight
-Overflowing Insight
-Covert Operative
-Moat Piranhas
-Phantom Warrior
-Scepter of Insight
-Overflowing Insight
-Tome Scour
-Triton Shorestalker
-Phantom Warrior
-Scepter of Insight
-Overflowing Insight
-Mist-Cloaked Herald
-Synchronous Sliver
-Phantom Warrior
-Defenestrate
-Finishing Blow
-Young Wei Recruits
-Unnerve
-Deathgrip
-Blood Vassal
-Deception
-Manor Skeleton
-Innocent Blood
-Three Tragedies
-Rathi Trapper
-Pride of the Perfect
-Screeching Harpy
-Nightshade Stinger
-Barter in Blood
-Fugue
-Hag of Noxious Nightmares
-Daring Demolition
-Mind Rot
-Daggerclaw Imp
-Diabolic Edict
-Delirium Skeins
-Waking Nightmare
-Feed the Serpent
-Bad Ass
-Fell the Profane
-Vampire Interloper
-Wit's End
-Royal Assassin
-Stronghold Taskmaster
-Cruel Edict
-Liturgy of Blood
-Blood Pet
-Urborg Shambler
-Hunted Ghoul
-Hero's Downfall
-Defenestrate
-Finishing Blow
-Deathgrip
-Hag of Noxious Nightmares
-Young Wei Recruits
-Unnerve
-Deathgrip
-Hag of Noxious Nightmares
-Blood Vassal
-Deception
-Deathgrip
-Hag of Noxious Nightmares
-Manor Skeleton
-Innocent Blood
-Deathgrip
-Hag of Noxious Nightmares
-Rathi Trapper
-Nightshade Stinger
-Deathgrip
-Hag of Noxious Nightmares
-Daring Demolition
-Mind Rot
-Blade Sliver
-Reckless Barbarian
-Blood Knight
-Wall of Granite
-Wall of Stone
-Yawning Fissure
-Cyclops of Eternal Fury
-Demolish
-Catalyst Elemental
-Tectonic Break
-Heart Sliver
-Misguided Rage
-Blistering Barrier
-Rubble Reading
-Devastation
-Wall of Earth
-Wall of Heat
-Infinity Elemental
-Sunder from Within
-Iron-Barb Hellion
-Yellow Scarves Troops
-Tremble
-Spinal Villain
-Battering Sliver
-Seismic Spike
-Avalanche
-Wall of Torches
-Flowstone Surge
-Bonesplitter Sliver
-Raging Kronch
-Clear a Path
-Goblin Glider
-Kyren Glider
-Craven Hulk
-Skirk Prospector
-Crack the Earth
-Lava Flow
-Giant Cindermaw
-Reckless Barbarian
-Yawning Fissure
-Blade Sliver
-Tectonic Break
-Infinity Elemental
-Demolish
-Catalyst Elemental
-Blade Sliver
-Tectonic Break
-Infinity Elemental
-Heart Sliver
-Misguided Rage
-Blade Sliver
-Tectonic Break
-Infinity Elemental
-Blistering Barrier
-Rubble Reading
-Blade Sliver
-Tectonic Break
-Infinity Elemental
-Stream of Life
-Sculptor of Winter
-Gaea's Anthem
-Wrap in Vigor
-Fyndhorn Brownie
-Gaea's Herald
-Wall of Ice
-Argothian Elder
-Tranquil Grove
-Wing Snare
-Naturalize
-Yavimaya Gnats
-Muscle Sliver
-Trolls of Tel-Jilad
-Fade into Antiquity
-Reflex Sliver
-Mobilize
-Natural Spring
-Lifeforce
-Vitalize
-Deconstruct
-Plummet
-Crosswinds
-Might Sliver
-Niall Silvain
-Wall of Wood
-Horned Sliver
-Spinneret Sliver
-Simplify
-Trip Wire
-Turn to Dust
-Desecration Plague
-Whirlwind
-Stream of Life
-Sculptor of Winter
-Gaea's Anthem
-Gaea's Herald
-Wrap in Vigor
-Fyndhorn Brownie
-Gaea's Anthem
-Gaea's Herald
-Naturalize
-Muscle Sliver
-Gaea's Anthem
-Gaea's Herald
-Fade into Antiquity
-Reflex Sliver
-Gaea's Anthem
-Gaea's Herald
-Mobilize
-Natural Spring
-Gaea's Anthem
-Gaea's Herald
-Vitalize
-Deconstruct
-Gaea's Anthem
-Gaea's Herald
-Plummet
-Aesthir Glider
-Orb of Dreams
-Tower of Fortunes
-Trip Noose
-Ashnod's Altar
-Mirror Gallery
-Krark-Clan Ironworks
-Thraben Gargoyle
-Braidwood Cup
-Myr Mindservant
-Steel Wall
-Tyrant's Machine
-Voltaic Construct
-Guardians of Meletis
-Memory Crystal
-Information Booth
-Su-Chi
-Steel Golem
-Eon Hub
-Jayemdae Tome
-Bonded Construct
-Voltaic Key
-Jandor's Saddlebags
-Arcane Encyclopedia
-Cathodion
-Jhoira's Toolbox
-Grid Monitor
-Aesthir Glider
-Suture Spirit
-Composite Golem
-Troll-Horn Cameo
-Unbender Tine
-Plateau
-Wrecking Ball
-Collective Blessing
-Tattered Drake
-Savannah
-Get the Point
-Bayou
-Elite Arrester
-Guttural Response
-Morgue Toad
-Badlands
-Drake-Skull Cameo
-Kiora's Follower
-Heroes' Reunion
-Dreadbore
-Jhessian Infiltrator
-Tropical Island
-Seashell Cameo
-Charging Troll
-Madrush Cyclops
-Volcanic Island
-Nature's Chant
-Ostiary Thrull
-Benalish Heralds
-Living Airship
-Taiga
-Fire Sprites
-Bloodstone Cameo
-Tundra
-Underground Sea
-Mortify
-Ramses Overdark
-Ragnar
-Tigereye Cameo
-Transguild Courier
-Scrubland
-Iridescent Angel
-Glimpse the Unthinkable
+Urza Assembles the Titans
+Hero of Bretagard
+Volunteer Reserves
+Vault 101: Birthday Party
+Cover of Winter
+Elspeth Resplendent
+The Girl in the Fireplace
+Formation
+Case of the Pilfered Proof
+Camel
+Icatian Skirmishers
+Kjeldoran Knight
+Vault 13: Dweller's Journey
+Icatian Infantry
+Grand Master of Flowers
+Trial of a Time Lord
+The Restoration of Eiganjo
+The Caves of Androzani
+Basri Ket
+The Eternal Wanderer
+Soraya the Falconer
+Ajani, Strength of the Pride
+Wilfred Mott
+Gideon of the Trials
+Triumph of Saint Katherine
+Elspeth Conquers Death
+Overseer of Vault 76
+The War Games
+Ao, the Dawn Sky
+The Wedding of River Song
+Rabble Rousing
+Courageous Resolve
+Knight of Sursi
+Wall of Caltrops
+Ocelot Pride
+Invasion of Gobakhan
+Soul Echo
+Ingenious Smith
+Knight of Old Benalia
+Gideon, Champion of Justice
+Gideon, the Oathsworn
+Stoic Farmer
+Angel of Indemnity
+Call to Arms
+Gavony Dawnguard
+Cleric Class
+Ward of Lights
+Unstable Glyphbridge
+Seasoned Dungeoneer
+Case File Auditor
+Tidal Influence
+Artificer Class
+Jace, Architect of Thought
+Dichotomancy
+Thassa's Oracle
+Gadwick's First Duel
+Sinister Concierge
+Will Kenrith
+Plan the Heist
+Grozoth
+The Eleventh Hour
+Slickshot Lockpicker
+Balduvian Shaman
+The Antiquities War
+Ancestral Knowledge
+Reweave
+Vronos, Masked Inquisitor
+Founding the Third Path
+Thought Lash
+Winter's Chill
+Jeskai Infiltrator
+Quest for Ula's Temple
+Duplicity
+Deep-Sea Kraken
+Glimpse the Cosmos
+The Watcher in the Water
+Blessed Reincarnation
+Wizard's Spellbook
+Talent of the Telepath
+Kheru Spellsnatcher
+Tamiyo Meets the Story Circle
+Case of the Filched Falcon
+Veiling Oddity
+Jace, the Perfected Mind
+Watcher of Hours
+Cryptic Coat
+Illusionary Presence
+Wiretapping
+Monstrosity of the Lake
+The Phasing of Zhalfir
+Unblinking Bleb
+Teferi, Temporal Pilgrim
+Auton Soldier
+Inevitable Betrayal
+Ascendant Spirit
+Search the City
+Arcane Heist
+Scroll of Isildur
+Outlaw Stitcher
+Delay
+Dance of the Dead
+Ashiok, Wicked Manipulator
+Roiling Horror
+Curse of the Cabal
+Tombstone Stairwell
+Necromancy
+Warlock Class
+Nihilith
+Professor Onyx
+Takklemaggot
+The Cruelty of Gix
+The Creation of Avacyn
+Vraska, Betrayal's Sting
+Genesis of the Daleks
+Orochi Soul-Reaver
+Charnel Serenade
+Court of Locthwain
+Braids's Frightful Return
+Lolth, Spider Queen
+Nashi, Moon Sage's Scion
+Arvinox, the Mind Flail
+The War in Heaven
+Brainstealer Dragon
+Wire Surgeons
+Grisly Sigil
+Ashcoat of the Shadow Swarm
+Herald of Leshrac
+Parallax Nexus
+Vislor Turlough
+Phyrexian Etchings
+Crabomination
+Bloodchief Ascension
+Hostile Negotiations
+Karumonix, the Rat King
+Caustic Bronco
+Polygraph Orb
+Haunting Voyage
+Mikaeus, the Unhallowed
+Corpses of the Lost
+Emperor of Bones
+Festering March
+Ob Nixilis of the Black Oath
+Coveted Prize
+Cemetery Tampering
+Beseech the Mirror
+Sphere of Annihilation
+Visions of Dread
+Mindleecher
+Case of the Stashed Skeleton
+Hidden Necropolis
+Nalathni Dragon
+Ral and the Implicit Maze
+Lukka, Coppercoat Outcast
+Detritivore
+Yotia Declares War
+Chandra, Dressed to Kill
+Jaya, Fiery Negotiator
+Chandra, Pyromaster
+Rousing Refrain
+There and Back Again
+Chandra, Hope's Beacon
+Heart of Bogardan
+Unpredictable Cyclone
+Jeska, Thrice Reborn
+Into the Time Vortex
+Call Forth the Tempest
+The Parting of the Ways
+Jaxis, the Troublemaker
+Zoyowa's Justice
+Life of the Party
+Ryan Sinclair
+Audacious Swap
+The Brothers' War
+Mirage Phalanx
+Reality Scramble
+Chaos Moon
+Rain of Riches
+Hew the Entwood
+Invasion of Tarkir
+Share the Spoils
+Guff Rewrites History
+Fiery Gambit
+Great Train Heist
+Hit the Mother Lode
+The Triumph of Anax
+Bloodthirsty Adversary
+Mezzio Mugger
+Noise Marine
+Book of Mazarbul
+Sarkhan, the Dragonspeaker
+Brass's Tunnel-Grinder
+Bloodbraid Marauder
+Ire Shaman
+Mishra's Research Desk
+Kumano Faces Kakkazan
+Rageform
+Volcanic Torrent
+Finale of Promise
+Daretti, Scrap Savant
+Orb of Dragonkind
+Master of the Hunt
+Fungal Behemoth
+Wrenn and Seven
+Ellywick Tumblestrum
+The Weatherseed Treaty
+The World Spell
+Saproling Burst
+Welcome to . . .
+Druid Class
+Emergent Woodwurm
+Recross the Paths
+Vivien, Monsters' Advocate
+Journey to the Lost City
+Vivien, Champion of the Wilds
+The Hunger Tide Rises
+Garruk, Caller of Beasts
+Expand the Sphere
+Birthing Ritual
+Wrenn and Realmbreaker
+Contest of Claws
+Slimefoot's Survey
+Trail of Crumbs
+Contagious Vorrac
+Green Sun's Twilight
+Fight Rigging
+The First Iroan Games
+The Huntsman's Redemption
+Kaslem's Stonetree
+Durnan of the Yawning Portal
+Radagast the Brown
+Fugitive of the Judoon
+Auspicious Starrix
+Gilt-Leaf Ambush
+The Dragon-Kami Reborn
+Splintering Wind
+Invasion of Ixalan
+Nissa, Who Shakes the World
+A Killer Among Us
+Path to the Festival
+Garruk, Unleashed
+Knickknack Ouphe
+Feral Encounter
+Druid of the Emerald Grove
+The Sea Devils
+Smuggler's Surprise
+Desert Warfare
+Gargantuan Gorilla
+Hibernation's End
+Dire Wolves
+Vorinclex, Monstrous Raider
+Mishra's War Machine
+Ice Cauldron
+Tawnos's Coffin
+Mountain Stronghold
+Seafarer's Quay
+Cathedral of Serra
+Adventurers' Guildhouse
+Unholy Citadel
+Karn, Living Legacy
+Battering Ram
+Urza's Engine
+Urza's Avenger
+Tetravus
+Digsite Conservator
+C.A.M.P.
+Voodoo Doll
+Urza's Saga
+Clockwork Steed
+Celebr-8000
+Shrine of Piercing Vision
+Clockwork Swarm
+Gate to the Afterlife
+Case of the Shattered Pact
+Karn, Scion of Urza
+Baton of Morale
+Buried Treasure
+The Deck of Many Things
+Kozilek, the Broken Reality
+Agatha's Soul Cauldron
+Smuggler's Buggy
+Karn, the Great Creator
+Clockwork Avian
+Icon of Ancestry
+Strixhaven Stadium
+Jar of Eyeballs
+Monument to Perfection
+Canoptek Wraith
+Nim Deathmantle
+Epochrasite
+Arcum's Whistle
+Rotating Fireplace
+The Celestus
+Bucolic Ranch
+Zhulodok, Void Gorger
+The Mana Rig
+Palantír of Orthanc
+Aether Searcher
+Helm of Obedience
+Ugin's Mastery
+Fraying Line
+The Day of the Doctor
+Domri, Chaos Bringer
+Ajani, Sleeper Agent
+Teferi, Who Slows the Sunset
+Minsc & Boo, Timeless Heroes
+Ob Nixilis, the Adversary
+Nahiri, the Unforgiving
+Tamiyo, Compleated Sage
+Comet, Stellar Pup
+Kaito, Dancing Shadow
+Corrosion
+Dihada, Binder of Wills
+Kaya, Spirits' Justice
+Sorcerer Class
+Monk Class
+Grist, the Hunger Tide
+Lukka, Bound to Ruin
+Malignant Growth
+Nissa of Shadowed Boughs
+Nature's Blessing
+Kaya the Inexorable
+Narset Transcendent
+Nahiri, Heir of the Ancients
+Rogue Class
+Kaito Shizuki
+The Celestial Toymaker
+Kotose, the Silent Spider
+Henzie "Toolbox" Torre
+Ral, Izzet Viceroy
+Vault 112: Sadistic Simulation
+Alaundo the Seer
+The Raven's Warning
+Ayesha Tanaka
+Araumi of the Dead Tide
+The Tenth Doctor
+Tezzeret, Master of the Bridge
+Hakbal of the Surging Soul
+Narset of the Ancient Way
+Kiora, Master of the Depths
+The Curse of Fenric
+Captain Rex Nebula
+The Fourteenth Doctor
+Ascent of the Worthy
+Oko, the Ringleader
+Magar of the Magic Strings
+Omnath, Locus of All
+The Horus Heresy
+Cryptic Pursuit
+Marath, Will of the Wild
+Gandalf of the Secret Fire
+Geyadrone Dihada
+Nissa, Steward of Elements
+Stronghold Arena
+Rassilon, the War President
+Jon Irenicus, Shattered One
+The First Tyrannic War
+Regenerations Restored
+Break Out
+Tezzeret, Agent of Bolas
+Niko Aris
