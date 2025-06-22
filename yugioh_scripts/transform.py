@@ -3,6 +3,8 @@ import json
 
 # need to read all of the cards from the card files directory and compile them into a single file of cards
 
+# grab the cards from https://github.com/db-ygoresources-com/yugioh-card-history/tree/main/en and use this script to compile them into a single JSON file of all the cards
+
 def combine_json_files(input_dir, output_file):
     combined_data = []
 
