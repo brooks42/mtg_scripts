@@ -84,8 +84,8 @@ class Card:
                         self.color_identity = prop.string
                     if prop.name == 'side':
                         self.side = prop.string
-                    if prop.name == 'format-legacy':
-                        self.legal = prop.string == 'legal'
+                    if prop.name == 'format-vintage':
+                        self.legal = prop.string == 'legal' or prop.string == 'limited'
             
             if node.name == 'set':
                 self.rarity = node['rarity']
@@ -139,6 +139,10 @@ def main():
 
         dumpCubeFile(all_cards)
 
+        word_count = 0
+        for card in all_cards:
+            word_count += len(card.text.split())
+        print(f'total word count of cube: {word_count}')
         print('Done')
 
     except Exception as e:

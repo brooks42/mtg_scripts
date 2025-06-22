@@ -187,6 +187,7 @@ Bloodthirsty Adversary
 Mezzio Mugger
 Noise Marine
 Book of Mazarbul
+Ragavan, Nimble Pilferer
 Sarkhan, the Dragonspeaker
 Brass's Tunnel-Grinder
 Bloodbraid Marauder
@@ -197,7 +198,6 @@ Rageform
 Volcanic Torrent
 Finale of Promise
 Daretti, Scrap Savant
-Orb of Dragonkind
 Master of the Hunt
 Fungal Behemoth
 Wrenn and Seven
@@ -278,7 +278,6 @@ The Deck of Many Things
 Kozilek, the Broken Reality
 Agatha's Soul Cauldron
 Smuggler's Buggy
-Karn, the Great Creator
 Clockwork Avian
 Icon of Ancestry
 Strixhaven Stadium
@@ -298,6 +297,7 @@ Aether Searcher
 Helm of Obedience
 Ugin's Mastery
 Fraying Line
+Goblin Charbelcher
 The Day of the Doctor
 Domri, Chaos Bringer
 Ajani, Sleeper Agent
