@@ -5,61 +5,12 @@
 # `pip3 install beautifulsoup4`
 # `pip3 install lxml`
 
-
-# example card
-
-
-#             <name>Opt</name>
-#             <text>Scry 1.
-# Draw a card.</text>
-#             <prop>
-#                 <format-oathbreaker>legal</format-oathbreaker>
-#                 <format-modern>legal</format-modern>
-#                 <format-pauper>legal</format-pauper>
-#                 <maintype>Instant</maintype>
-#                 <coloridentity>U</coloridentity>
-#                 <format-explorer>legal</format-explorer>
-#                 <format-vintage>legal</format-vintage>
-#                 <format-pioneer>legal</format-pioneer>
-#                 <format-gladiator>legal</format-gladiator>
-#                 <format-brawl>legal</format-brawl>
-#                 <cmc>1</cmc>
-#                 <manacost>U</manacost>
-#                 <type>Instant</type>
-#                 <format-legacy>legal</format-legacy>
-#                 <format-duel>legal</format-duel>
-#                 <format-historic>legal</format-historic>
-#                 <format-paupercommander>legal</format-paupercommander>
-#                 <format-timeless>legal</format-timeless>
-#                 <layout>normal</layout>
-#                 <format-premodern>legal</format-premodern>
-#                 <format-commander>legal</format-commander>
-#                 <format-predh>legal</format-predh>
-#                 <side>front</side>
-#                 <colors>U</colors>
-#             </prop>
-
 import sys
-import random
 from card import Card
-from cube_utils import displayStatsForCube, pruneCubeTo360, dumpCubeFile
-
+from cube_utils import displayStatsForCube, dumpCubeFile
 from bs4 import BeautifulSoup
-from collections import Counter
 
 def main():
-    """ 
-    compiles the set of cards in ../cards.xml into a cube format
-
-    cube format is just a file with the card names, with repeated card names for commons
-
-    so for example
-
-    Card One
-    Fireball
-    Lightning Bolt
-    Omnipotence
-    """
 
     try:
         # sys.argv[1] is expected to be -f for bash reasons
@@ -68,7 +19,7 @@ def main():
         # open the input file as XML, input is assumed to be a cockatrice card file
         print("Loading file...")
 
-        all_cards = allLegalCards(filename)
+        all_cards = allLegalCards(filename, passesFilter)
 
         displayStatsForCube(all_cards)
 
@@ -86,8 +37,10 @@ def main():
         print(f"Exception: {e}")
         print("Usage: python3 most_complex_cube.py -f filename")
 
-# gets the entire list of legal cards
-def allLegalCards(filename):
+# gets the entire list of legal cards, including cards filtered by the passed filter
+# filter takes a card and returns a boolean
+# special version of this function that orders the cards by length when it returns them
+def allLegalCards(filename, filter):
 
     all_available_cards = list()
     all_commons = list()
@@ -108,11 +61,11 @@ def allLegalCards(filename):
             card = Card(cockatrice_card)
 
             # only append non-token rarities, and append twice if rarity is common
-            if  card.rarity == 'token':
+            if card.rarity == 'token':
                 continue
 
             # throw together all cards that pass the filter for each rarity, we'll prune them down later
-            if passesFilter(card):
+            if filter(card):
                 all_available_cards.append(card)
 
                 if card.rarity == 'common':
@@ -136,6 +89,51 @@ def allLegalCards(filename):
     all_mythics.sort()
 
     return all_commons + all_uncommons + all_rares + all_mythics
+        
+# prunes the cube to a color-balanced 360 cards
+# special version of this function that sorts by card text length...
+def pruneCubeTo360(all_cards: list[Card]):
+    white_slots = list()
+    blue_slots = list()
+    black_slots = list()
+    red_slots = list()
+    green_slots = list()
+    colorless_slots = list()
+    multicolor_slots = list()
+
+    all_cards.sort()
+    all_cards.reverse()
+    for card in all_cards:
+        color = card.colorIdentityStr()
+
+        if color == 'colorless' and len(colorless_slots) < 50: # 50 is just a common max number for colorless cards
+            colorless_slots.append(card)
+
+        if color == 'multicolor' and len(multicolor_slots) < 60: # 60 is a common max number for multicolor cards
+            multicolor_slots.append(card)
+            
+        if color == 'W' and len(white_slots) < 50:
+            white_slots.append(card)
+
+        if color == 'U' and len(blue_slots) < 50:
+            blue_slots.append(card)
+
+        if color == 'B' and len(black_slots) < 50:
+            black_slots.append(card)
+
+        if color == 'R' and len(red_slots) < 50:
+            red_slots.append(card)
+
+        if color == 'G' and len(green_slots) < 50:
+            green_slots.append(card)
+
+        # check to return list, otherwise keep going...
+        if len(white_slots) == 50 and len(blue_slots) == 50 and len(black_slots) == 50 and len(red_slots) == 50 and len(green_slots) == 50 and len(colorless_slots) == 50 and len(multicolor_slots) == 60:
+            break
+
+    all_done = white_slots + blue_slots + black_slots + red_slots + green_slots + colorless_slots + multicolor_slots
+    print(f'Compiled cube list from {len(all_cards)} to {len(all_done)}')
+    return all_done
 
 # here's where a custom filter goes if we want one
 def passesFilter(card):

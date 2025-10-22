@@ -1,5 +1,35 @@
 #!/usr/bin/env python
 
+#             <name>Opt</name>
+#             <text>Scry 1.
+# Draw a card.</text>
+#             <prop>
+#                 <format-oathbreaker>legal</format-oathbreaker>
+#                 <format-modern>legal</format-modern>
+#                 <format-pauper>legal</format-pauper>
+#                 <maintype>Instant</maintype>
+#                 <coloridentity>U</coloridentity>
+#                 <format-explorer>legal</format-explorer>
+#                 <format-vintage>legal</format-vintage>
+#                 <format-pioneer>legal</format-pioneer>
+#                 <format-gladiator>legal</format-gladiator>
+#                 <format-brawl>legal</format-brawl>
+#                 <cmc>1</cmc>
+#                 <manacost>U</manacost>
+#                 <type>Instant</type>
+#                 <format-legacy>legal</format-legacy>
+#                 <format-duel>legal</format-duel>
+#                 <format-historic>legal</format-historic>
+#                 <format-paupercommander>legal</format-paupercommander>
+#                 <format-timeless>legal</format-timeless>
+#                 <layout>normal</layout>
+#                 <format-premodern>legal</format-premodern>
+#                 <format-commander>legal</format-commander>
+#                 <format-predh>legal</format-predh>
+#                 <side>front</side>
+#                 <colors>U</colors>
+#             </prop>
+
 class Card:
     def __init__(self, name, text, maintype, ctype, manacost, cmc, color_identity, rarity, side, legal):
         self.name = name

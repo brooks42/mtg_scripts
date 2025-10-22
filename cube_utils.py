@@ -1,4 +1,57 @@
 from card import Card
+from bs4 import BeautifulSoup
+
+# gets the entire list of legal cards, including cards filtered by the passed filter
+# filter takes a card and returns a boolean
+def allLegalCards(filename, filter):
+
+    all_available_cards = list()
+    all_commons = list()
+    all_uncommons = list()
+    all_rares = list()
+    all_mythics = list()
+
+    with open(filename, "r") as f:
+        soup_obj = BeautifulSoup(f, "xml")
+
+        # grab the list of cards out of the input cockatrice xml file
+        all_cards = soup_obj.findAll("card")
+
+        for index in range(len(all_cards)):
+
+            # grab the info and transform this into the Card instance format above
+            cockatrice_card = all_cards[index]
+            card = Card(cockatrice_card)
+
+            # only append non-token rarities, and append twice if rarity is common
+            if card.rarity == 'token':
+                continue
+
+            # throw together all cards that pass the filter for each rarity, we'll prune them down later
+            if filter(card):
+                all_available_cards.append(card)
+
+                if card.rarity == 'common':
+                    all_commons.append(card)
+                if card.rarity == 'uncommon':
+                    all_uncommons.append(card)
+                if card.rarity == 'rare':
+                    all_rares.append(card)
+                if card.rarity == 'mythic':
+                    all_mythics.append(card)
+
+        print(f'cards legal in legacy: {len(all_available_cards)}/{len(all_cards)}')
+
+    print(
+        f'Lists calculated {len(all_commons)} {len(all_uncommons)} {len(all_rares)} {len(all_mythics)}')
+
+    # sort the cards in place, we'll be able to pluck out cards by color later
+    all_commons.sort()
+    all_uncommons.sort()
+    all_rares.sort()
+    all_mythics.sort()
+
+    return all_commons + all_uncommons + all_rares + all_mythics
 
 # prints the stats of the cube
 def displayStatsForCube(all_cards: list[Card]):
@@ -77,15 +130,13 @@ def pruneCubeTo360(all_cards: list[Card]):
     colorless_slots = list()
     multicolor_slots = list()
 
-    all_cards.sort()
-    all_cards.reverse()
     for card in all_cards:
         color = card.colorIdentityStr()
 
-        if color == 'colorless' and len(colorless_slots) < 50:
+        if color == 'colorless' and len(colorless_slots) < 50: # 50 is just a common max number for colorless cards
             colorless_slots.append(card)
 
-        if color == 'multicolor' and len(multicolor_slots) < 60:
+        if color == 'multicolor' and len(multicolor_slots) < 60: # 60 is a common max number for multicolor cards
             multicolor_slots.append(card)
             
         if color == 'W' and len(white_slots) < 50:
