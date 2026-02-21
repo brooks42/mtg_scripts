@@ -70,7 +70,7 @@ class Card:
                     if prop.name == 'side':
                         self.side = prop.string
                     if prop.name == 'format-vintage':
-                        self.legal = prop.string == 'legal' or prop.string == 'limited'
+                        self.legal = prop.string == 'legal' or prop.string == 'limited' or prop.string == 'restricted'
             
             if node.name == 'set':
                 self.rarity = node['rarity']
